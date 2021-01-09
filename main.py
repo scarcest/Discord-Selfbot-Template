@@ -49,12 +49,22 @@ def banner():
 async def on_connect():
 	banner()
 
-@knife.command()
+@knife.command()        # basic help cmd
 async def help(ctx):
 	await ctx.message.delete()
 	em = discord.Embed(title=f"Knife v{v}", color=0x000000, timestamp=ctx.message.created_at, description=f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n>`{prefix}help - displays this msg`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	em.set_footer(text=f"Knife v{v}")
 	em.set_image(url="https://cdn.discordapp.com/attachments/785521893766856755/797306975221579785/350kb.gif")
 	await ctx.send(embed=em)
+	
+	
+'''
+to add a new command do this:
 
-initial()
+@knife.command()
+async def function(ctx, args):
+	code here
+	blah blah
+'''
+
+initial() # do not remove this
